@@ -3,7 +3,7 @@ import { User, LoginCredentials, RegisterData, ResetPasswordData } from '../type
 
 export const authService = {
   login: async (credentials: LoginCredentials) => {
-    const response = await api.post('/api/v1/auth/login', credentials);
+    const response = await api.post('http://localhost:5001/api/v1/auth/login', credentials);
     if (response.data.token) {
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
